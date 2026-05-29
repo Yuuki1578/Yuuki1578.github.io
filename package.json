@@ -1,0 +1,10 @@
+{
+  "name": "Yuuki's Basement",
+  "version": "1.0.0",
+  "devDependencies": {
+    "vite": "^8.0.14"
+  },
+  "scripts": {
+    "start": "vite serve"
+  }
+}

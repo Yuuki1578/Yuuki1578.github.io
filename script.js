@@ -1,29 +1,53 @@
-const interval = 100;
-const colorList = ["red", "green", "blue", "cyan", "purple", "orange"];
+let interval = 100;
 
-const title = "Hello there!";
+const colorList = [
+  "red",
+  "green",
+  "blue",
+  "cyan",
+  "purple",
+  "orange",
+  "yellow",
+];
+
+const heading = "Hello there!";
 let index = 0;
-const section = document.querySelector("header>section");
+const section = document.querySelector("header>span");
+const sliderInput = document.querySelector("header>form>input");
 
-setInterval(function() {
-  if (index >= title.length) {
+function randomGen(maxLength) {
+  return Math.floor(Math.random() * maxLength);
+}
+
+function parseInputValue(inputElement) {
+  const value = parseInt(inputElement.value)
+  if (isNaN(value)) return 100;
+  else return value;
+}
+
+function main() {
+  if (index >= heading.length)
     index = 0;
-  }
 
-  const before = title.slice(0, index);
-  const current = title[index];
-  const after = title.slice(index + 1, title.length);
-  const colorIndex = Math.floor(Math.random() * colorList.length);
+
+  const before = heading.slice(0, index);
+  const current = heading[index];
+  const after = heading.slice(index + 1, heading.length);
+  const colorIndex = randomGen(colorList.length);
   const color = colorList[colorIndex];
+
+  interval = parseInt(parseInputValue(sliderInput), "10");
 
   const formatted = `
     <h1>
       ${before}<span style="color: ${color}">${current}</span>${after}
     </h1>
-  `
+    <samp>Interval: ${interval}ms</samp>
+  `;
 
-  // section.insertAdjacentHTML("afterbegin", formatted);
   section.innerHTML = formatted;
-
   index += 1;
-}, interval)
+  setTimeout(main, interval);
+}
+
+main();
