@@ -1,5 +1,4 @@
 let interval = 100;
-
 const colorList = [
   "red",
   "green",
@@ -10,7 +9,7 @@ const colorList = [
   "yellow",
 ];
 
-const heading = "Hello there!";
+const heading = "HELLO THERE!";
 let index = 0;
 const section = document.querySelector("header>span");
 const sliderInput = document.querySelector("header>form>input");
@@ -20,15 +19,15 @@ function randomGen(maxLength) {
 }
 
 function parseInputValue(inputElement) {
-  const value = parseInt(inputElement.value)
+  const value = parseInt(inputElement.value);
   if (isNaN(value)) return 100;
   else return value;
 }
 
 function main() {
-  if (index >= heading.length)
+  if (index >= heading.length) {
     index = 0;
-
+  }
 
   const before = heading.slice(0, index);
   const current = heading[index];
