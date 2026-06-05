@@ -7,8 +7,6 @@ body {
 
 .nav-bar {
   backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  -moz-backdrop-filter: blur(10px);
   position: fixed;
   top: 0;
   left: 0;
@@ -34,17 +32,4 @@ body {
 
 header {
   text-align: center;
-}
-
-table {
-  text-align: center;
-}
-
-th, td, tr {
-  border: 1px solid black;
-  padding: 1vw 1vw;
-}
-
-col {
-  background-color: yellow;
 }
