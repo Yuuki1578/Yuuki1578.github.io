@@ -11,8 +11,8 @@ const colorList = [
 
 const heading = "HELLO THERE!";
 let index = 0;
-const section = document.querySelector("header>span");
-const sliderInput = document.querySelector("header>form>input");
+const section = document.querySelector(".animation-container");
+const sliderInput = document.querySelector(".input-slider");
 
 function randomGen(maxLength) {
   return Math.floor(Math.random() * maxLength);
@@ -24,10 +24,8 @@ function parseInputValue(inputElement) {
   else return value;
 }
 
-function main() {
-  if (index >= heading.length) {
-    index = 0;
-  }
+function titleAnimation() {
+  if (index >= heading.length) index = 0;
 
   const before = heading.slice(0, index);
   const current = heading[index];
@@ -46,7 +44,34 @@ function main() {
 
   section.innerHTML = formatted;
   index += 1;
-  setTimeout(main, interval);
+  setTimeout(titleAnimation, interval);
 }
 
-main();
+titleAnimation();
+
+let emailBody = "";
+
+function reloadSendButton(parentNode) {
+  parentNode.innerHTML = `
+    <button>
+      <a 
+        href="mailto:destuawang@gmail.com?subject=Feedback&body=${emailBody}"
+        style="text-decoration: none; color: black;"
+        >
+        Send!
+      </a>
+    </button>
+  `;
+}
+
+function watchTextInput(inputElement, parentNode) {
+  inputElement.addEventListener("input", () => {
+    emailBody = inputElement.value;
+    reloadSendButton(parentNode);
+  });
+}
+
+const textArea = document.querySelector(".form-textarea");
+const sendFeedback = document.querySelector(".form-action");
+
+watchTextInput(textArea, sendFeedback);

@@ -13,7 +13,7 @@
 <body>
   <nav class="nav-bar">
     <section class="nav-content">
-      <a class="nav-link" href="">About</a>
+      <a class="nav-link" href="pages/about.html">About</a>
     </section>
     <section class="nav-content">
       <a class="nav-link" href="">Contact</a>
@@ -26,9 +26,9 @@
     </section>
   </nav>
   <header>
-    <span> <!-- RESERVED FOR JAVASCRIPT DOM!!! --> </span>
+    <span class="animation-container"> <!-- RESERVED FOR JAVASCRIPT DOM!!! --> </span>
     <form>
-      <input name="slider" type="range" value="100" min="5" max="500">
+      <input class="input-slider" name="slider" type="range" value="100" min="5" max="500">
       <label for="slider">Change interval</label>
       <p>See the javascript <a href="./script.js">here</a></p>
     </form>
@@ -76,12 +76,19 @@
       </p>
       <hr>
     </section>
+
+    <section class="main-section">
+      <h2>Something missing? give me feedback!</h2>
+      <form>
+        <textarea class="form-textarea" rows="15" cols="35"></textarea>
+        <span class="form-action"></span>
+      </form>
+    </section>
+    <hr>
   </main>
 
   <footer>
     <p>Copyright 2026 github@Yuuki1578. All rights reserved.</p>
-    <hr>
-    <span>Powered by <a href="https://serveo.net">Serveo</a> ♥️</span>
   </footer>
 </body>
 </html>
