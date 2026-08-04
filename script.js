@@ -63,14 +63,11 @@ let emailBody = "";
 
 function reloadSendButton(parentNode) {
   parentNode.innerHTML = `
-    <button class="send-email">
-      <a 
-        href="mailto:destuawang@gmail.com?subject=Feedback&body=${emailBody}"
-        style="text-decoration: none; color: black;"
-        >
+    <div class="ui-button">
+      <a href="mailto:destuawang@gmail.com?subject=Feedback&body=${emailBody}">
         Send!
       </a>
-    </button>
+    </div>
   `;
 }
 

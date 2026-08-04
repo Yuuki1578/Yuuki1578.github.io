@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="author" content="Awang Destu Pradhana">
+		<meta name="description" content="Journal page or smth">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="icon" type="image/x-icon" href="https://avatars.githubusercontent.com/u/112001664?s=96&v=4">
+		<link rel="stylesheet" href="/style.css">
+		<title>Yuuki's basement - Project - misc.h</title>
+	</head>
+	<body>
+		<nav class="nav-bar">
+			<section class="nav-content">
+				<a class="nav-link" href="/">Home</a>
+			</section>
+			<section class="nav-content">
+				<a class="nav-link" href="/pages/about.html">About</a>
+			</section>
+			<section class="nav-content">
+				<a class="nav-link" href="">Resources</a>
+			</section>
+			<section class="nav-content">
+				<a class="nav-link" href="">Blogs</a>
+			</section>
+		</nav>
+
+		<header>
+			<h1>misc.h</h1>
+		</header>
+
+		<main>
+			<article class="main-section">
+				<h2>&gt; Prelude</h2>
+				<p>
+					This is a small, header-only type of library for the C programming language.
+					It targets all C compilers that follows the standard specification of C99
+					or <a href="https://www.open-std.org/jtc1/sc22/wg14/www/docs/n1256.pdf" target="_blank">ISO/IEC 9899:1999</a>.
+					<br>
+
+					The idea is to combining basic features that's found in another languages, but not in C in
+					a single file.
+					Usually, C library consist of but not limited to:
+				</p>
+
+				<ol>
+					<li>
+						<h3>Header files</h3>
+						<p>
+							The purpose of this file is to provide a public API to the programmer
+							but hide the implementation details. This make sense if your library
+							is proprietary, but open source library usually does this too.<br>
+							The extension of this files are <i class="code-filesys">*.h</i>.
+						</p>
+					</li>
+					<li>
+						<h3>Shared object</h3>
+						<p>
+							This is the implementation of the library. It always contains symbols from
+							the header files, but it can have an internal API that cannot be called from outside,
+							like functions with the <i class="code-keyword">static</i>
+							keyword.<br>
+							This files commonly reside in system directories. On POSIX, it's at <i class="code-filesys">/usr/lib</i>
+							or <i class="code-filesys">/lib</i>.<br>
+
+							The advantage is we can now have multiple software that depends on a single shared object that can run
+							independently. I guarantee you that every software you ran, depends on the <i class="code-term">libc</i>
+							shared object.
+						</p>
+					</li>
+				</ol>
+
+				<h2>&gt; Problem</h2>
+				<p>
+					Take example, <i class="code-term">libcurl</i>, what do you need to setup in order to use the library?
+					Of course, it's the shared object and the header files (maybe it's on different package like libcurl-devel and so on).
+					That's not a problem, but if the library you are using also depends on the other library, and they're also depends on
+					yet another library, what would you do? Heck, the package manager manages them all, no problem.
+					<br><br>
+
+					But what if you want to share your software to other people? They might use different machine architecture, or even
+					different operating system. Maybe they had the library your software depends on in their package manager and maybe not.
+					Now you have to tell these people to download the correct dependencies in order to just run your software. That doesn't sounds like
+					a good user experience to me, there's a lot of moving parts that the users wasn't supposed to know in the first place.
+					<br><br>
+				</p>
+
+				<h2>&gt; Solution</h2>
+				<p>
+					All of this actually can be solved if the library stick to the standard specification of the language itself. We can
+					go further, if we can standarized a common features like networking, file system, and others, you can compile
+					your software for every OS/Architecture that only depends on the language standard implementation, namely <i class="code-term">libc</i>.
+					But as suck as it is, they just say NO. Now we have different kind of system call that also differ with each architecture and OS.
+				</p>
+
+				<h2>&gt; So what? Lmao</h2>
+				<p>
+					<i class="code-term">misc.h</i>
+					itself isn't trying to become the common standard of the C programming language, no no no. It just provide you an API
+					that is common in another language and it's OS-agnostic.
+					<br><br>
+
+					Though, this is not the first time this idea came out. I took inspiration
+					from the same library that's trying to solve the same problem like <a href="https://github.com/nothings/stb" target="_blank">stb</a>.
+					<br><br>
+				</p>
+			</article>
+		</main>
+
+		<footer>
+			<p>Copyright 2026 Awang Destu Pradhana. All rights reserved.</p>
+		</footer>
+	</body>
+</html>

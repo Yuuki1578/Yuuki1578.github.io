@@ -26,16 +26,7 @@ h3,
 h4,
 h5,
 h6 {
-  /* color: #FFA066; */
   color: #E6C384;
-}
-
-main {
-  margin: 0 auto;
-  padding: 0 1rem;
-  display: block;
-  justify-content: center;
-  align-items: center;
 }
 
 .nav-bar {
@@ -54,6 +45,14 @@ main {
   margin: 1em auto;
 }
 
+main {
+  margin: 0 auto;
+  padding: 0 1rem;
+  display: block;
+  justify-content: center;
+  align-items: center;
+}
+
 .main-section {
   border: 0.2em solid #717C7C;
   margin-top: 4vw;
@@ -61,18 +60,54 @@ main {
   padding: 2vw;
 }
 
+.code-keyword {
+  color: #957FB8;
+}
+
+.code-filesys {
+  color: #7E9CD8;
+}
+
+.code-term {
+  color: #E6C384;
+}
+
 a {
   color: #E82424;
-  text-decoration: none;
+  text-decoration: underline;
 }
 
 .nav-link {
   color: #090618;
+  font-weight: bolder;
+  text-decoration: none;
 }
 
-.nav-link:hover,
-.nav-link:focus {
+.nav-link:hover {
   text-decoration: underline;
+}
+
+.ui-button {
+  text-align: center;
+  width: 25%;
+  border: 0.2em solid #717C7C;
+  padding: 1.2vw;
+  margin-top: 1.2vw;
+  margin-bottom: 1.2vw;
+}
+
+.ui-button:hover {
+  background-color: #C34043;
+  color: #090618;
+}
+
+.ui-button > a {
+  color: #7AA89F;
+  text-decoration: none;
+}
+
+.ui-button > a:hover {
+  color: #090618;
 }
 
 .send-email,
