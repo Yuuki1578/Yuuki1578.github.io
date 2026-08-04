@@ -1,13 +1,46 @@
+@font-face {
+  font-family: "BigBlueTerm";
+  src: url("/res/fonts/BigBlueTermPlusNerdFont-Regular.ttf");
+}
+
+html {
+  margin: 0;
+}
+
 body {
-  font: 1.2em / 1.5em system-ui;
+  font-family: "BigBlueTerm";
+  font-size: 0.9em;
+  width: 99%;
   margin: 0 auto;
-  width: 90%;
-  padding-top: 60px;
+  background-color: #1F1F28;
+  color: #DCD7BA;
+}
+
+header {
+  text-align: center;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  /* color: #FFA066; */
+  color: #E6C384;
+}
+
+main {
+  margin: 0 auto;
+  padding: 0 1rem;
+  display: block;
+  justify-content: center;
+  align-items: center;
 }
 
 .nav-bar {
-  backdrop-filter: blur(10px);
-  position: fixed;
+  background-color: #7E9CD8;
+  height: 5%;
   top: 0;
   left: 0;
   right: 0;
@@ -21,15 +54,42 @@ body {
   margin: 1em auto;
 }
 
-.nav-link {
-  color: black;
+.main-section {
+  border: 0.2em solid #717C7C;
+  margin-top: 4vw;
+  margin-bottom: 4vw;
+  padding: 2vw;
+}
+
+a {
+  color: #E82424;
   text-decoration: none;
 }
 
-.nav-link:hover, .nav-link:focus {
+.nav-link {
+  color: #090618;
+}
+
+.nav-link:hover,
+.nav-link:focus {
   text-decoration: underline;
 }
 
-header {
+.send-email,
+.send-email > * {
+  font-family: inherit;
+}
+
+textarea {
+  width: 95%;
+  height: 20vw;
+  background-color: inherit;
+  font-family: inherit;
+  color: #DCD7BA;
+}
+
+footer {
+  background-color: #C34043;
   text-align: center;
+  padding: 4vw;
 }

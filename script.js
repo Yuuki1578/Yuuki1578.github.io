@@ -1,17 +1,30 @@
-let interval = 100;
+let interval = 100; // milisec
 const colorList = [
-  "red",
-  "green",
-  "blue",
-  "cyan",
-  "purple",
-  "orange",
-  "yellow",
-];
+  "#090618",
+  "#C34043",
+  "#76946A",
+  "#C0A36E",
+  "#7E9CD8",
+  "#957FB8",
+  "#6A9589",
+  "#DCD7BA",
+  "#727169",
+  "#E82424",
+  "#98BB6C",
+  "#7FB4CA",
+  "#938AA9",
+  "#7AA89F",
+  "#C8C093",
+  "#DCD7BA",
+  "#DCD7BA",
+]; // Kanagawa wave palette, include all but not the background
 
-const heading = "HELLO THERE!";
-let index = 0;
+const heading = "HELLO THERE!"; // h1, index.html only
+let index = 0;                  // randomize
+
+// header>span
 const section = document.querySelector(".animation-container");
+// header>form>input
 const sliderInput = document.querySelector(".input-slider");
 
 function randomGen(maxLength) {
@@ -25,8 +38,6 @@ function parseInputValue(inputElement) {
 }
 
 function titleAnimation() {
-  if (index >= heading.length) index = 0;
-
   const before = heading.slice(0, index);
   const current = heading[index];
   const after = heading.slice(index + 1, heading.length);
@@ -35,15 +46,14 @@ function titleAnimation() {
 
   interval = parseInt(parseInputValue(sliderInput), "10");
 
-  const formatted = `
+  section.innerHTML = `
     <h1>
       ${before}<span style="color: ${color}">${current}</span>${after}
     </h1>
-    <samp>Interval: ${interval}ms</samp>
+    <span>Interval: ${interval}ms</span>
   `;
 
-  section.innerHTML = formatted;
-  index += 1;
+  index = (index + 1) % heading.length;
   setTimeout(titleAnimation, interval);
 }
 
@@ -53,7 +63,7 @@ let emailBody = "";
 
 function reloadSendButton(parentNode) {
   parentNode.innerHTML = `
-    <button>
+    <button class="send-email">
       <a 
         href="mailto:destuawang@gmail.com?subject=Feedback&body=${emailBody}"
         style="text-decoration: none; color: black;"
