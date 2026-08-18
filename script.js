@@ -58,27 +58,3 @@ function titleAnimation() {
 }
 
 titleAnimation();
-
-let emailBody = "";
-
-function reloadSendButton(parentNode) {
-  parentNode.innerHTML = `
-    <div class="ui-button">
-      <a href="mailto:destuawang@gmail.com?subject=Feedback&body=${emailBody}">
-        Send!
-      </a>
-    </div>
-  `;
-}
-
-function watchTextInput(inputElement, parentNode) {
-  inputElement.addEventListener("input", () => {
-    emailBody = inputElement.value;
-    reloadSendButton(parentNode);
-  });
-}
-
-const textArea = document.querySelector(".form-textarea");
-const sendFeedback = document.querySelector(".form-action");
-
-watchTextInput(textArea, sendFeedback);

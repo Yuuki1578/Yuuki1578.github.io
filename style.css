@@ -88,31 +88,20 @@ a {
 }
 
 .ui-button {
+  display: block;
+  box-sizing: border-box;
   text-align: center;
+  text-decoration: none;
+  color: #76946A;
   width: 25%;
   border: 0.2em solid #717C7C;
   padding: 1.2vw;
-  margin-top: 1.2vw;
-  margin-bottom: 1.2vw;
+  margin: 1.2vw 0 1.2vw 0;
 }
 
 .ui-button:hover {
   background-color: #C34043;
   color: #090618;
-}
-
-.ui-button > a {
-  color: #7AA89F;
-  text-decoration: none;
-}
-
-.ui-button > a:hover {
-  color: #090618;
-}
-
-.send-email,
-.send-email > * {
-  font-family: inherit;
 }
 
 textarea {
@@ -121,6 +110,12 @@ textarea {
   background-color: inherit;
   font-family: inherit;
   color: #DCD7BA;
+}
+
+.ui-singlemedia {
+  display: block;
+  margin: 20px auto;
+  max-width: 250px;
 }
 
 footer {
